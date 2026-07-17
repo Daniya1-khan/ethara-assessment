@@ -2,6 +2,7 @@ import "./globals.css";
 import { Toaster } from "react-hot-toast";
 import Sidebar from "../components/layout/sidebar";
 import Navbar from "../components/layout/navbar";
+import AuthListener from "../components/common/AuthListener";
 
 export const metadata = {
   title: "Ethara Seat Allocation",
@@ -12,6 +13,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="min-h-screen bg-slate-50">
+        <AuthListener />
         <div className="flex min-h-screen">
           <Sidebar />
 

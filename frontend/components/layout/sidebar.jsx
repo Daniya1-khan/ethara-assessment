@@ -26,6 +26,12 @@ export default function Sidebar() {
 
   function logout() {
     localStorage.removeItem("token");
+    // broadcast logout to other tabs
+    try {
+      localStorage.setItem("logout", Date.now().toString());
+    } catch (e) {
+      // ignore
+    }
     router.push("/login");
   }
 
